@@ -4,6 +4,7 @@
   "description": "Server",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node ./src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,11 +19,13 @@
   "homepage": "https://github.com/PeacefulCosmos/DIT5402Server#readme",
   "devDependencies": {
     "@types/express": "^4.16.1",
+    "ts-node": "^9.1.1",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
   },
   "dependencies": {
     "@types/mongoose": "^5.10.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.11.8"
   }
 }
