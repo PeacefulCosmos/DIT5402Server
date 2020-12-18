@@ -1,0 +1,28 @@
+{
+  "name": "dit5402server",
+  "version": "1.0.0",
+  "description": "Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeacefulCosmos/DIT5402Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeacefulCosmos/DIT5402Server/issues"
+  },
+  "homepage": "https://github.com/PeacefulCosmos/DIT5402Server#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.10.3",
+    "express": "^4.16.4"
+  }
+}
