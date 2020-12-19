@@ -1,34 +1,17 @@
-interface Spot {
-  fee: number;
-  openingTime: number;
-  closingTime: number;
-  location: string;
-  closingDate: closingDate;
-  description: string;
-}
+import * as spotModel from "./spot.model";
 
-interface closingDate {
-  twentyFourSeven: boolean;
-  exceptHoliday: boolean;
-  regular: number;
-  arbitrary: Date;
-}
+// Get all spots
+export const listAllSpot = async () => {};
 
-let museum1: Spot = {
-  fee: 100,
-  openingTime: 9,
-  closingTime: 17,
-  location: "japan",
-  closingDate: {
-    twentyFourSeven: false,
-    exceptHoliday: false,
-    regular: 4,
-    arbitrary: new Date(0),
-  },
-  description: "des1",
+//Set spot detail
+export const setSpot = async (spotData: spotModel.SpotInput) => {
+  let holidaysArray = await getHolidaysinMonth(spotData.closingDate);
+  spotData.closingDate;
 };
 
-function getHolidaysinMonth(closingDate: closingDate): Array<Date> {
+export const getHolidaysinMonth = async (
+  closingDate: spotModel.closingDate
+): Promise<Array<Date>> => {
   let d: Date = new Date(),
     month: number = d.getMonth(),
     holidayInMonth: Array<Date> = [];
@@ -58,6 +41,4 @@ function getHolidaysinMonth(closingDate: closingDate): Array<Date> {
   }
   console.log(holidayInMonth);
   return holidayInMonth;
-}
-
-getHolidaysinMonth(museum1.closingDate);
+};
