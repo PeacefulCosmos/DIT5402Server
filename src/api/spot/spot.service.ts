@@ -1,8 +1,11 @@
+import { Query } from "mongoose";
 import * as spotInt from "./spot.model";
 const SpotM = require("./spot.model");
 
 // Get all spots
-export const listAllSpot = async () => {};
+export const listAllSpot = async (): Promise<Array<spotInt.Spot>> => {
+  return SpotM.find({});
+};
 
 //Set spot detail
 export const setSpot = async (spotData: spotInt.Spot): Promise<String> => {
