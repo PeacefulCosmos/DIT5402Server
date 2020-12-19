@@ -1,16 +1,22 @@
-import * as spotModel from "./spot.model";
+import * as spotInt from "./spot.model";
+const SpotM = require("./spot.model");
 
 // Get all spots
 export const listAllSpot = async () => {};
 
 //Set spot detail
-export const setSpot = async (spotData: spotModel.SpotInput) => {
-  let holidaysArray = await getHolidaysinMonth(spotData.closingDate);
-  spotData.closingDate;
+export const setSpot = async (spotData: spotInt.Spot): Promise<String> => {
+  let spotModel = new SpotM(spotData);
+  spotModel.save((err: Error, registeredSpot: spotInt.Spot) => {
+    if (err) console.log(err);
+    else console.log(registeredSpot);
+  });
+  return "OK";
 };
 
+//return the holidays in month
 export const getHolidaysinMonth = async (
-  closingDate: spotModel.closingDate
+  closingDate: spotInt.closingDate
 ): Promise<Array<Date>> => {
   let d: Date = new Date(),
     month: number = d.getMonth(),
@@ -25,7 +31,7 @@ export const getHolidaysinMonth = async (
   // Day after public holiday
 
   // A weekly closing day
-  if (closingDate.regular !== 0) {
+  if (closingDate.regular >= 1 && closingDate.regular <= 7) {
     while (d.getMonth() === month) {
       if (d.getDay() === closingDate.regular)
         holidayInMonth.push(new Date(d.getTime()));

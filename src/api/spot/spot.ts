@@ -9,6 +9,5 @@ SpotRouter.get(`/`, async (req: Request, res: Response) => {
 });
 
 SpotRouter.post(`/`, async (req: Request, res: Response) => {
-  await SpotSer.setSpot(req.body);
-  res.send();
+  res.status(200).send(await SpotSer.setSpot(req.body));
 });

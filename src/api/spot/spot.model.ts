@@ -1,5 +1,10 @@
-export interface SpotInput {
+import { Schema } from "mongoose";
+
+import mongoose = require("mongoose");
+
+export interface Spot {
   name: string;
+  fee: number;
   type: string;
   openingTime: number;
   closingTime: number;
@@ -15,55 +20,68 @@ export interface closingDate {
   arbitrary: Date;
 }
 
-export interface Spot {
-  name: string;
-  type: string;
-  openingTime: number;
-  closingTime: number;
-  location: string;
-  holiday: Array<Date>;
-  description: string;
-}
+const SpotSchema: Schema = new Schema({
+  name: String,
+  fee: Number,
+  type: String,
+  openingTime: Number,
+  closingTime: Number,
+  location: String,
+  closingDate: Object,
+  description: String,
+});
 
-export class shoppingCentre implements Spot {
-  name: string;
-  type: string;
-  openingTime: number;
-  closingTime: number;
-  location: string;
-  holiday: Date[];
-  description: string;
+module.exports = mongoose.model("spot", SpotSchema);
+// export interface Spot {
+//   name: string;
+//   type: string;
+//   openingTime: number;
+//   closingTime: number;
+//   location: string;
+//   holiday: Array<Date> | boolean;
+//   description: string;
+// }
 
-  constructor(
-    name: string,
-    type: string,
-    openingTime: number,
-    closingTime: number,
-    location: string,
-    holiday: Date[],
-    description: string
-  ) {
-    this.name = name;
-    this.type = type;
-    this.openingTime = openingTime;
-    this.closingTime = closingTime;
-    this.location = location;
-    this.holiday = holiday;
-    this.description = description;
-  }
-}
+// export class shoppingCentre implements Spot {
+//   name: string;
+//   type: string;
+//   openingTime: number;
+//   closingTime: number;
+//   location: string;
+//   holiday: Date[];
+//   description: string;
 
-export let theBigBuddha: SpotInput = {
-  name: `The Big Buddha`,
-  type: `View`,
-  openingTime: 9,
-  closingTime: 17,
-  location: "Hong Kong",
-  closingDate: {
-    twentyFourSeven: false,
-    exceptHoliday: false,
-    regular: 4,
-    arbitrary: new Date(0),
-  },
-  description: "des1",
-};
+//   constructor(
+//     name: string,
+//     type: string,
+//     openingTime: number,
+//     closingTime: number,
+//     location: string,
+//     holiday: Date[],
+//     description: string
+//   ) {
+//     this.name = name;
+//     this.type = type;
+//     this.openingTime = openingTime;
+//     this.closingTime = closingTime;
+//     this.location = location;
+//     this.holiday = holiday;
+//     this.description = description;
+//   }
+// }
+
+// export let theBigBuddha: Spot = {
+//   name: `The Big Buddha`,
+//   fee: 100,
+//   type: `View`,
+//   openingTime: 9,
+//   closingTime: 17,
+//   location: "Hong Kong",
+//   closingDate: {
+//     twentyFourSeven: false,
+//     exceptHoliday: false,
+//     regular: 4,
+//     arbitrary: new Date(0),
+//   },
+//   description: "des1",
+// };

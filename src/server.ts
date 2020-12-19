@@ -2,6 +2,7 @@ import express = require("express");
 import { Response, Request } from "express";
 import * as bodyParser from "body-parser";
 import { apiRouter } from "./route";
+import { SpotRouter } from "./api/spot";
 // const mongoose = require("mongoose");
 // import * as mongoose from "mongoose";
 import mongoose = require("mongoose");
@@ -17,6 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/apiRouter", apiRouter);
 
+app.use("/api/spot", SpotRouter);
 // mongoose
 //   .connect("db", { useNewUrlParser: true, useUnifiedTopology: true })
 //   .then(() => {
