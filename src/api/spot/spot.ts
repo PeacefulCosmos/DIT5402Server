@@ -11,3 +11,7 @@ SpotRouter.get(`/`, async (req: Request, res: Response) => {
 SpotRouter.post(`/`, async (req: Request, res: Response) => {
   res.status(200).send(await SpotSer.createSpot(req.body));
 });
+
+SpotRouter.delete(`/`, async (req: Request, res: Response) => {
+  res.status(200).send(await SpotSer.deleteAll());
+});

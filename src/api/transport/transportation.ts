@@ -11,3 +11,7 @@ TransportRouter.get(`/`, async (req: Request, res: Response) => {
 TransportRouter.post(`/`, async (req: Request, res: Response) => {
   res.status(200).send(await TransportSer.createTransportation(req.body));
 });
+
+TransportRouter.delete(`/`, async (req: Request, res: Response) => {
+  res.status(200).send(await TransportSer.deleteAll());
+});

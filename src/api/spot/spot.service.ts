@@ -8,13 +8,31 @@ export const listAllSpot = async (): Promise<Array<spotInt.Spot>> => {
 };
 
 //Set spot detail
-export const createSpot = async (spotData: spotInt.Spot): Promise<String> => {
-  let spotModel = new SpotM(spotData);
-  spotModel.save((err: Error, registeredSpot: spotInt.Spot) => {
-    if (err) console.log(err);
-    else console.log(registeredSpot);
-  });
+export const createSpot = async (spotData: any): Promise<String> => {
+  let spotArr: Array<spotInt.Spot> = spotData.spot;
+  let spotModel: any = null;
+  for await (let doc of spotArr) {
+    spotModel = new SpotM(doc);
+    spotModel.save((err: Error, registeredSpot: spotInt.Spot) => {
+      if (err) console.log(err);
+      else console.log(registeredSpot);
+    });
+  }
   return "OK";
+};
+
+//Delete all spots
+export const deleteAll = async (): Promise<String> => {
+  let message: string = "";
+  await SpotM.remove({}, (err: Error) => {
+    if (err) {
+      console.log(err);
+      message = "Error";
+    } else {
+      message = "Delete all aspots";
+    }
+  });
+  return message;
 };
 
 //return the holidays in month

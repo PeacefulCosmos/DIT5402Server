@@ -1,0 +1,33 @@
+{
+"spot":
+[{
+   "name":"The Small Buddha",
+   "fee":100,
+   "type":"View",
+   "openingTime":9,
+   "closingTime":17,
+   "location":"Hong Kong",
+   "closingDate":{
+      "twentyFourSeven":false,
+      "exceptHoliday":false,
+      "regular":4,
+      "arbitrary":"2014-01-01T23:28:56.782Z"
+   },
+   "description":"des1"
+},
+{
+   "name":"The Medium Buddha",
+   "fee":100,
+   "type":"View",
+   "openingTime":9,
+   "closingTime":17,
+   "location":"Hong Kong",
+   "closingDate":{
+      "twentyFourSeven":false,
+      "exceptHoliday":false,
+      "regular":4,
+      "arbitrary":"2014-01-01T23:28:56.782Z"
+   },
+   "description":"des1"
+}]
+}

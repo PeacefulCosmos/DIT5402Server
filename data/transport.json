@@ -1,0 +1,31 @@
+{
+"transport":
+[{
+    "name":"1A",
+    "duration":35,
+    "fee":"5",
+    "type":"Bus",
+    "operator":"The Kowloon Motor Bus Co. (1933) Ltd"
+},
+{
+    "name":"39",
+    "duration":15,
+    "fee":"9.6",
+    "type":"Minibus",
+    "operator":"Hop On P.L.B. Bus Service Company Limited"
+},
+{
+    "name":"MTR",
+    "duration":20,
+    "fee":"5",
+    "type":"Train",
+    "operator":"MTR Corporation Limited"
+},
+{
+    "name":"Agency Coach",
+    "duration":18,
+    "fee":"60",
+    "type":"",
+    "operator":""
+}]
+}

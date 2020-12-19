@@ -8,16 +8,33 @@ export const listAllTransportation = async (): Promise<
   return transportationM.find({});
 };
 
-//Set spot transportation
-export const createTransportation = async (
-  transportData: transportationInt.Transportation
-) => {
-  let transportModel = new transportationM(transportData);
-  transportModel.save(
-    (err: Error, registeredTransport: transportationInt.Transportation) => {
-      if (err) console.log(err);
-      else console.log(registeredTransport);
-    }
-  );
+//Create transportation
+export const createTransportation = async (transportData: any) => {
+  let transportArr: Array<transportationInt.Transportation> =
+    transportData.transport;
+  let transportModel: any = null;
+  for await (let doc of transportArr) {
+    transportModel = new transportationM(doc);
+    transportModel.save(
+      (err: Error, registeredTransport: transportationInt.Transportation) => {
+        if (err) console.log(err);
+        else console.log(registeredTransport);
+      }
+    );
+  }
   return "OK";
+};
+
+//Delete all transport
+export const deleteAll = async (): Promise<String> => {
+  let message: string = "";
+  await transportationM.remove({}, (err: Error) => {
+    if (err) {
+      console.log(err);
+      message = "Error";
+    } else {
+      message = "Delete all transportation";
+    }
+  });
+  return message;
 };
