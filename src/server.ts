@@ -6,6 +6,7 @@ import { SpotRouter } from "./api/spot";
 // const mongoose = require("mongoose");
 // import * as mongoose from "mongoose";
 import mongoose = require("mongoose");
+import { TransportRouter } from "./api/transport/transportation";
 const app = express();
 const PORT: number = 3000;
 const db = "mongodb://localhost:27017/assignment";
@@ -19,6 +20,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/apiRouter", apiRouter);
 
 app.use("/api/spot", SpotRouter);
+app.use("/api/transport", TransportRouter);
 // mongoose
 //   .connect("db", { useNewUrlParser: true, useUnifiedTopology: true })
 //   .then(() => {

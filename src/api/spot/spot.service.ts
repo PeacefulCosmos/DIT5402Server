@@ -8,7 +8,7 @@ export const listAllSpot = async (): Promise<Array<spotInt.Spot>> => {
 };
 
 //Set spot detail
-export const setSpot = async (spotData: spotInt.Spot): Promise<String> => {
+export const createSpot = async (spotData: spotInt.Spot): Promise<String> => {
   let spotModel = new SpotM(spotData);
   spotModel.save((err: Error, registeredSpot: spotInt.Spot) => {
     if (err) console.log(err);
@@ -22,6 +22,7 @@ export const getHolidaysinMonth = async (
   closingDate: spotInt.closingDate
 ): Promise<Array<Date>> => {
   let d: Date = new Date(),
+    year: number = d.getFullYear(),
     month: number = d.getMonth(),
     holidayInMonth: Array<Date> = [];
   d.setDate(1);

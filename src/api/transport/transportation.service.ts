@@ -1,10 +1,23 @@
-import * as transportation from "./transportation.model";
+import * as transportationInt from "./transportation.model";
+const transportationM = require("./transportation.model");
 
-// Get all spots
-export const listAllSpot = async () => {};
+// Get all transportation
+export const listAllTransportation = async (): Promise<
+  Array<transportationInt.Transportation>
+> => {
+  return transportationM.find({});
+};
 
-//Set spot detail
-export const setSpot = async (spotData: spotModel.SpotInput) => {
-  let holidaysArray = await getHolidaysinMonth(spotData.closingDate);
-  spotData.closingDate;
+//Set spot transportation
+export const createTransportation = async (
+  transportData: transportationInt.Transportation
+) => {
+  let transportModel = new transportationM(transportData);
+  transportModel.save(
+    (err: Error, registeredTransport: transportationInt.Transportation) => {
+      if (err) console.log(err);
+      else console.log(registeredTransport);
+    }
+  );
+  return "OK";
 };
