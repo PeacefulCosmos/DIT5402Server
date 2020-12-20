@@ -1,33 +1,95 @@
 {
 "spot":
 [{
-   "name":"The Small Buddha",
+   "name":"The Big Buddha",
    "fee":100,
-   "type":"View",
+   "type":"Sightseeing",
    "openingTime":9,
    "closingTime":17,
-   "location":"Hong Kong",
+   "location":"Ngong Ping",
    "closingDate":{
       "twentyFourSeven":false,
       "exceptHoliday":false,
       "regular":4,
       "arbitrary":"2014-01-01T23:28:56.782Z"
    },
-   "description":"des1"
+   "description":"Tian Tan Buddha is a large bronze statue of Buddha Shakyamuni."
 },
 {
-   "name":"The Medium Buddha",
-   "fee":100,
-   "type":"View",
-   "openingTime":9,
-   "closingTime":17,
-   "location":"Hong Kong",
+   "name":"Pimary & Co.",
+   "fee":300,
+   "type":"Eating",
+   "openingTime":8,
+   "closingTime":23,
+   "location":"Tai Po",
    "closingDate":{
       "twentyFourSeven":false,
       "exceptHoliday":false,
       "regular":4,
-      "arbitrary":"2014-01-01T23:28:56.782Z"
+      "arbitrary":"2020-02-15"
    },
-   "description":"des1"
-}]
+   "description":"Designed to bring a bit of Western woodlands to Hong Kong."
+},
+{
+   "name":"Tai Wo Tang",
+   "fee":50,
+   "type":"Eating",
+   "openingTime":12,
+   "closingTime":20,
+   "location":"Kowloon City",
+   "closingDate":{
+      "twentyFourSeven":false,
+      "exceptHoliday":false,
+      "regular":0,
+      "arbitrary":"2020-12-25"
+   },
+   "description":"an opportunity to glimpse into everyday life back in historic Hong Kong."
+},
+{
+   "name":"Four Seasons Hotel Hong Kong",
+   "fee":2500,
+   "type":"Hotel",
+   "openingTime":0,
+   "closingTime":24,
+   "location":"Central",
+   "closingDate":{
+      "twentyFourSeven":true,
+      "exceptHoliday":false,
+      "regular":0,
+      "arbitrary":""
+   },
+   "description":"A culinary and wellness destination at the edge of storied Victoria Harbour."
+},
+{
+   "name":"Panda Hotel",
+   "fee":288,
+   "type":"Hotel",
+   "openingTime":0,
+   "closingTime":24,
+   "location":"Tsuen Wan",
+   "closingDate":{
+      "twentyFourSeven":true,
+      "exceptHoliday":false,
+      "regular":0,
+      "arbitrary":""
+   },
+   "description":"One of the best Hong Kong hotels."
+},
+{
+   "name":"wtc more",
+   "fee":0,
+   "type":"Hotel",
+   "openingTime":12,
+   "closingTime":22,
+   "location":"Causeway Bay",
+   "closingDate":{
+      "twentyFourSeven":false,
+      "exceptHoliday":false,
+      "regular":0,
+      "arbitrary":""
+   },
+   "description":"A compact little shopping centre does indeed offer ‘more’ than the usual suspects."
 }
+]
+}
+

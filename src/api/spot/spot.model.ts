@@ -9,6 +9,7 @@ export interface Spot {
   openingTime: number;
   closingTime: number;
   location: string;
+  duration: number;
   closingDate: closingDate;
   description: string;
 }
@@ -27,6 +28,7 @@ const SpotSchema: Schema = new Schema({
   openingTime: Number,
   closingTime: Number,
   location: String,
+  duration: Number,
   closingDate: Object,
   description: String,
 });
